@@ -408,12 +408,12 @@ a {
 .flex-visible {
   position: relative;
 }
+
 .text-depiction {
   position: absolute;
   visibility: hidden;
 }
-.text-depiction:hover,
-.text-depiction:focus {
+.flex-visible:hover .text-depiction {
   visibility: visible;
   font: normal 18px/28px Roboto, serif;
   letter-spacing: 0.03em;
@@ -435,8 +435,8 @@ a {
 }
 .title-depiction:hover {
   border: 1px solid #eeeeee;
-  box-shadow: 2px solid 1px 4px 6px rgba(0, 0, 0, 0.16),
-    0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 .flex-container {
   display: flex;
