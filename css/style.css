@@ -403,15 +403,20 @@ a {
   font: bold 18px/36px Roboto, serif;
   letter-spacing: 0.06em;
   color: var(--title-text-color);
-  /* position: relative;
-  height: 100%; */
+  margin-bottom: 30px;
+}
+.flex-visible {
+  position: relative;
 }
 .text-depiction {
+  position: absolute;
+  visibility: hidden;
+}
+.text-depiction:hover,
+.text-depiction:focus {
+  visibility: visible;
   font: normal 18px/28px Roboto, serif;
   letter-spacing: 0.03em;
-  /* position: absolute;
-  top: 0;
-  left:0; */
   width: 370px;
   height: 294px;
   color: var(--text-white-color);
@@ -427,6 +432,11 @@ a {
   font: normal 16px/30px Roboto, serif;
   letter-spacing: 0.03em;
   color: var(--text-color);
+}
+.title-depiction:hover {
+  border: 1px solid #eeeeee;
+  box-shadow: 2px solid 1px 4px 6px rgba(0, 0, 0, 0.16),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 .flex-container {
   display: flex;
@@ -444,4 +454,8 @@ a {
 }
 .title-depiction:nth-child(3n) {
   margin-right: 0px;
+}
+.tehno-text {
+  padding-left: 24px;
+  padding-bottom: 20px;
 }
