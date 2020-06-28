@@ -93,7 +93,14 @@ a {
   color: var(--link-text-color);
   fill: var(--link-text-color);
 }
-
+.link .icon-mail:hover,
+.link .icon-mail:focus {
+  fill: var(--link-text-color);
+}
+.link .icon-phone:hover,
+.link .icon-phone:focus {
+  fill: var(--link-text-color);
+}
 /* commun-nav */
 .header-contact {
   display: flex;
@@ -109,6 +116,20 @@ a {
   margin-left: 30px;
 }
 
+/* svg-icon */
+.icon-mail {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: var(--text-color);
+}
+
+.icon-phone {
+  width: 10px;
+  height: 15px;
+  margin-right: 10px;
+  fill: var(--text-color);
+}
 /* site-nav */
 .main-section {
   max-width: 100%;
@@ -549,10 +570,4 @@ a {
 .tehno-text {
   padding-left: 24px;
   padding-bottom: 20px;
-}
-
-/* svg-icon */
-.icon-mail {
-  width: 16px;
-  height: 11px;
 }
