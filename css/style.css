@@ -88,19 +88,7 @@ a {
   color: var(--link-text-color);
   border-bottom: 2px solid #2196f3;
 }
-.header-contact .link:hover,
-.header-contact .link:focus {
-  color: var(--link-text-color);
-  fill: var(--link-text-color);
-}
-.link .icon-mail:hover,
-.link .icon-mail:focus {
-  fill: var(--link-text-color);
-}
-.link .icon-phone:hover,
-.link .icon-phone:focus {
-  fill: var(--link-text-color);
-}
+
 /* commun-nav */
 .header-contact {
   display: flex;
@@ -116,6 +104,19 @@ a {
   margin-left: 30px;
 }
 
+.header-contact .link:hover,
+.header-contact .link:focus {
+  color: var(--link-text-color);
+  fill: var(--link-text-color);
+}
+.link:hover .icon-mail,
+.link:focus .icon-mail {
+  fill: var(--link-text-color);
+}
+.link:hover .icon-phone,
+.link:focus .icon-phone {
+  fill: var(--link-text-color);
+}
 /* svg-icon */
 .icon-mail {
   width: 16px;
@@ -343,8 +344,8 @@ a {
   width: 20px;
   fill: #afb1b8;
 }
-.icon:hover,
-.icon:focus {
+.list-icon-item:hover .icon,
+.list-icon-item:focus .icon {
   fill: var(--text-white-color);
 }
 .list-icon-item + .list-icon-item {
@@ -372,8 +373,8 @@ a {
   color: var(--link-text-color);
   fill: var(--link-text-color);
 }
-.icon-customer:hover,
-.icon-customer:focus {
+.link:hover .icon-customer,
+.link:focus .icon-customer {
   fill: var(--link-text-color);
 }
 .icon-customer {
