@@ -57,7 +57,7 @@ a {
 }
 .logo :hover,
 .logo :focus {
-  text-decoration: underline;
+  text-decoration: underline var(--link-text-color);
 }
 .logo-web {
   color: var(--link-text-color);
@@ -343,6 +343,9 @@ a {
 .icon {
   width: 20px;
   fill: #afb1b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .list-icon-item:hover .icon,
 .list-icon-item:focus .icon {
@@ -426,9 +429,9 @@ a {
   margin-bottom: 20px;
   font: bold 26px/31px Raleway, serif;
 }
-.logo-bottom :hover,
-.logo-bottoms :focus {
-  text-decoration: underline;
+.logo-bottom:hover,
+.logo-bottoms:focus {
+  text-decoration: underline var(--link-text-color);
 }
 .footer-address {
   width: 231px;
@@ -473,6 +476,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
 }
 .item-footer .icon {
   fill: var(--text-white-color);
