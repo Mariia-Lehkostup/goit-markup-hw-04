@@ -77,18 +77,29 @@ a {
   letter-spacing: 0.02em;
   display: block;
   padding-bottom: 32px;
-  border-bottom: 2px solid #ffffff;
-  border-radius: 2px;
+  position: relative;
 }
 .site-nav .item + .item {
   margin-left: 50px;
 }
-.site-nav .link:hover,
-.site-nav .link:focus {
-  color: var(--link-text-color);
-  border-bottom: 2px solid #2196f3;
-}
+.site-nav .link::after,
+.site-nav .link::after {
+  content: '';
 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  color: var(--link-text-color);
+  outline: 2px solid #2196f3;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.site-nav .link:hover::after,
+.site-nav .link:focus::after {
+  opacity: 1;
+}
 /* commun-nav */
 .header-contact {
   display: flex;
@@ -99,6 +110,8 @@ a {
 }
 .header-contact .link {
   color: var(--text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contact .link + .link {
   margin-left: 30px;
@@ -330,18 +343,26 @@ a {
 .list-icon-item {
   width: 44px;
   height: 44px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .list-icon-item:hover,
 .list-icon-item:focus {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: var(--bcg-btn-color);
   fill: var(--text-white-color);
 }
 .icon {
   width: 20px;
+  height: 20px;
   fill: #afb1b8;
   display: flex;
   align-items: center;
@@ -382,6 +403,8 @@ a {
 }
 .icon-customer {
   fill: #afb1b8;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-customer.one {
@@ -417,7 +440,6 @@ a {
 }
 .footer-style {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -478,6 +500,9 @@ a {
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-footer .icon {
   fill: var(--text-white-color);
@@ -500,9 +525,13 @@ a {
   letter-spacing: 0.03em;
   justify-content: center;
   margin-bottom: 34px;
-  background: #f5f4fa;
+  background-color: #f5f4fa;
   border-radius: 4px;
   padding: 6px 22px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-site .link + .link {
   margin-left: 8px;
@@ -521,6 +550,10 @@ a {
   letter-spacing: 0.06em;
   color: var(--title-text-color);
   margin-bottom: 30px;
+  overflow: hidden;
+  width: 370px;
+  margin-right: 30px;
+  border: 1px solid #eeeeee;
 }
 .flex-visible {
   position: relative;
@@ -528,10 +561,14 @@ a {
 
 .text-depiction {
   position: absolute;
-  visibility: hidden;
+  transform: translateY(100%);
+  left: 0;
+  top: 0;
+  opacity: 0;
+  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
-.flex-visible:hover .text-depiction {
-  visibility: visible;
+.title-depiction:hover .text-depiction {
   font: normal 18px/28px Roboto, serif;
   letter-spacing: 0.03em;
   width: 370px;
@@ -543,6 +580,10 @@ a {
   justify-content: center;
   background: rgba(33, 150, 243, 0.9);
   margin-top: 0;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .title-depiction .text {
@@ -550,7 +591,8 @@ a {
   letter-spacing: 0.03em;
   color: var(--text-color);
 }
-.title-depiction:hover {
+.title-depiction:hover,
+.title-depiction:focus {
   border: 1px solid #eeeeee;
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
@@ -562,18 +604,13 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 94px;
-  /* position: relative;
-  height: 100%; */
 }
-.title-depiction {
-  width: 370px;
-  margin-right: 30px;
-  border: 1px solid #eeeeee;
-}
+
 .title-depiction:nth-child(3n) {
   margin-right: 0px;
 }
 .tehno-text {
   padding-left: 24px;
   padding-bottom: 20px;
+  overflow: hidden;
 }
